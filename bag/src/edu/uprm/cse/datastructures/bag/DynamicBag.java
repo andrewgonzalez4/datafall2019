@@ -97,5 +97,9 @@ public class DynamicBag implements Bag{
 		}
 		this.currentSize = 0;		
 	}
+	 
+//	public List<Integer> bagAnalizer(Bag<E> b){
+//		return null;
+//	}
 
 }

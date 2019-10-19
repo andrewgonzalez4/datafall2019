@@ -248,7 +248,6 @@ public class SinglyLinkedList<E> implements List<E> {
 		}
 	}
 
-
 	@Override
 	public int removeAll(E e) {
 		int count = 0;

@@ -199,5 +199,13 @@ public class ArrayList<E> implements List<E> {
 		}
 		return result;
 	}
+	
+	public void removeDuplicates() {
+		for (int i = 0; i < this.currentSize; i++) {
+			if(this.firstIndexOf(elements[i])!= this.lastIndexOf(elements[i])) {
+				this.remove(this.lastIndexOf(elements[i]));
+			}
+		}
+	}
 
 }
