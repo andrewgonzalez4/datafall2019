@@ -6,29 +6,42 @@ import edu.uprm.cse.ds.stack.Stack;
 public class StackTester {
 
 	public static void main(String[] args) {
-		Stack<String> S = new ArrayStack<String>();
+		ArrayStack<String> stacky = new ArrayStack<String>();
+		stacky.push("Mami");
+		stacky.push("Papi");
+		stacky.push("Andy");
+		stacky.push("Ednielys");
+		stacky.push("Andy");
+		stacky.push("Mama");
 		
-		// Add Elements
-		S.push("Bob");
-		S.push("Ned");
-		S.push("Moe");
-		S.push("Ron");
-		S.push("Kim");
+		deleteFromStack(stacky,"Andy");
 		
-		System.out.println("Stack: ");
-		S.print(System.out);
+		while(!stacky.isEmpty()) {
+			System.out.println(stacky.pop());
+		}
 		
-		S.pop();
-		S.pop();
-		S.push(S.pop());
-		S.push(S.top());
+	
+	}
+	
+	public static void deleteFromStack(ArrayStack<String> S, String obj) {
+		ArrayStack<String> buffer = new ArrayStack<String>();
+		while(!S.isEmpty()) {
+			if(S.top().equals(obj)) {
+				S.pop();
+			}
+			
+			else {
+				buffer.push(S.pop());
+			}
+		}
 		
-		System.out.println();
-		System.out.println("Stack: ");
-		S.print(System.out);
-
-
-
+		S.clear();
+		
+		while(!buffer.isEmpty()) {
+			S.push(buffer.pop());
+		}
+	
+		
 	}
 
 }
